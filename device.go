@@ -211,7 +211,7 @@ func (ys *Ys7) UpdateCameraName(deviceSerial, name string, channelNo int) (err e
 }
 
 //修改设备视频加密密码
-func (ys *Ys7)Updateviewpassword(accessToken,deviceSerial,oldPassword,newPassword string)(camera Camera,err error)  {
+func (ys *Ys7)Updateviewpassword(accessToken,deviceSerial,oldPassword,newPassword string)(err error)  {
 	params:=make(map[string]interface{})
 	params["deviceSerial"]=deviceSerial
 	params["oldPassword"]=oldPassword
@@ -220,7 +220,7 @@ func (ys *Ys7)Updateviewpassword(accessToken,deviceSerial,oldPassword,newPasswor
 	if err!=nil {
 		return
 	}
-	return
+	return nil
 }
 
 //根据设备序列号查询设备能力集
